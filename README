@@ -1,0 +1,13 @@
+  This is a Ruby script to dynamically update your DNS entries in Linode.com's
+DNS manager so that you can host websites at home.
+
+  After configure it, with your api key and dns entry ids, you can invoke it at
+the command like like this:
+
+ruby set_dns.rb
+
+REQURIMENTS: > Ruby 1.9.2
+
+MIT License.  Enjoy.
+
+
