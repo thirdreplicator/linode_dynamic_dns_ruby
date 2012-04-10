@@ -1,12 +1,42 @@
-  This is a Ruby script to dynamically update your DNS entries in Linode.com's
+This is a Ruby script to dynamically update your DNS entries in Linode.com's
 DNS manager so that you can host websites at home.
 
-  After configure it, with your api key and dns entry ids, you can invoke it at
+REQUIREMENTS: >= Ruby 1.9.2, linode gem.
+
+0. Install the linode gem.
+
+  gem install linode
+
+1. Get your API key from your linode account and put it in the script.
+
+2. Find your domain id for the domain that you want to manage. Enter it into
+set_dns.rb.
+
+3. Find the dns entry ids for the rows that you want to change everytime
+you reconnect to your host.  Enter it into set_dns.rb.
+
+After configure the script with your api key and dns entry ids, you can invoke it at
 the command like like this:
 
-ruby set_dns.rb
+OPTION 1:
 
-REQURIMENTS: > Ruby 1.9.2
+  ruby set_dns.rb
+
+or better yet,
+
+OPTION 2: make it executable by adding a shebang line for your Ruby.
+
+  chmod +x set_dns.rb
+
+then add this (or wherever your system-wide ruby binary is) as the first
+line to set_dns.rb:
+
+  #!/usr/local/rvm/gems/ruby-1.9.2-p318
+
+If you go for OPTION 2, you can copy it into /etc/dhcp3, so that it is
+executed everytime you reboot your computer and get a new ip address.
+
+---
 
 MIT License.  Enjoy.
 
